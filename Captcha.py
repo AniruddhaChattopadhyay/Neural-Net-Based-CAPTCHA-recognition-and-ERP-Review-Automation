@@ -92,13 +92,15 @@ def break_captcha(img1):
             w = stop_black_pixel[i]-start_black_pixel[i]
             wid_f = (float) (w/20)
             wid = (int) (wid_f+.5)
+            if(wid<1):
+                wid=1
             wide = w/wid
+            iter = 0
             while wid!=1 :
-                iter=0
                 start_black_pixel.insert(i+iter+1,start_black_pixel[i]+wide)
                 stop_black_pixel.insert(i+iter,start_black_pixel[i]+wide)
                 wid=wid-1
-
+                iter = iter+1
     predictions = []
     for i in range(len(start_black_pixel)):
         x = start_black_pixel[i]

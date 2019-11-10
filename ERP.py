@@ -65,7 +65,7 @@ for el in fed:
 frame = driver.switch_to.frame(driver.find_element_by_id('myframe'))
 fed4 = driver.find_elements_by_tag_name("a")
 len_fed4 = len(fed4)
-for j in range(4):
+for j in range(6):
     for i in range(6):
         for k in range(len_fed4):
             try:
